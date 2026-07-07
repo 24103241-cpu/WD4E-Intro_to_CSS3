@@ -1,36 +1,89 @@
-body{
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size:150%;
+    font-size: 150%;
 }
 
-header{
+header {
     background-color: lightblue;
 }
 
-nav{
-    background-color: lightgray;
-}
-
-main{
+main {
     background-color: white;
-    font-size:120%;
+    font-size: 120%;
 }
 
-footer{
+footer {
     background-color: lightgray;
 }
 
-li{
-    display:inline-block;
-    width:200px;
+li {
+    display: inline-block;
+    width: 200px;
 }
 
-h1{
-    text-align:center;
-    font-family:Arial, Helvetica, sans-serif;
-    color:darkblue;
+h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkblue;
 }
 
-p{
-    line-height:1.6;
+p {
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   2. MÃ NGUỒN BỔ SUNG THEO BÀI TẬP MỚI
+   ========================================== */
+
+/* Bước 4: Chuyển đổi nav thành khối nội tuyến và đặt chiều rộng 80% */
+nav {
+    background-color: lightgray;
+    display: inline-block;
+    width: 80%;
+}
+
+/* Bước 5: Sử dụng bộ chọn hậu duệ để chỉnh ảnh trong nav rộng 10% */
+nav img {
+    width: 10%;
+}
+
+/* Bước 6 & Bước 8: Thiết lập bố cục CSS Grid gồm 2 cột */
+.grid-container {
+    display: grid;
+    grid-template-columns: 40% 40%; /* Mỗi cột xấp xỉ 40% */
+    
+    /* Bước 8: Thử nghiệm căn chỉnh thuộc tính Grid */
+    justify-content: space-around; /* Căn đều các cột theo chiều ngang */
+    align-items: center;           /* Căn giữa phần tử theo chiều dọc */
+    row-gap: 20px;                 /* Tạo khoảng cách 20px giữa các hàng */
+}
+
+/* Bước 7: Bộ chọn hậu duệ giúp hình ảnh trong lưới tự động rộng 100% */
+.grid-container img {
+    width: 100%;
+}
+
+/* Bước 9: Thiết lập bố cục linh hoạt Flexbox */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;              /* Tự động xuống hàng khi màn hình nhỏ */
+    justify-content: center;      /* Căn giữa các phần tử flex theo chiều ngang */
+}
+
+/* Hỗ trợ Bước 2: Định dạng liên kết Skip Link (Chỉ xuất hiện khi nhấn phím Tab) */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    z-index: 999;
+}
+
+.skip-link:focus {
+    top: 10px; /* Nhảy lên đầu trang khi người dùng Tab trúng */
 }
